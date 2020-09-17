@@ -14,8 +14,8 @@ void fillArray(int *array, int arrayLength) {
 
 void markArray(int *array, int arrayLength) {
     for (int i = 0; i < arrayLength; i += 1) {
-        if (array[i] != 0) {
-            for (int j = array[i]; j <= array[arrayLength - 1]; j += array[i]) {
+        if (array[i]) {
+            for (int j = array[i]; j <= arrayLength + 1; j += array[i]) {
                 if (j != array[i]) {
                     array[j-2] = 0;
                 }

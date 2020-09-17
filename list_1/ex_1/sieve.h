@@ -10,6 +10,8 @@ int* createArray(int);
 
 void fillArray(int*, int);
 
+void markArray(int*, int);
+
 void printArray(int*, int);
 
 void freeArray(int *);

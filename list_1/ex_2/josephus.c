@@ -40,7 +40,10 @@ void appendList(Node *node, List *list) {
 }
 
 void printList(List *list) {
-  
+  for (Node *p = list->head; p != NULL; p = p->next) {
+    printf("%d ", p->number);
+  }
+  putchar('\n');
 }
 
 void freeList(List* list) {

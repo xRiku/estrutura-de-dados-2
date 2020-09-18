@@ -11,7 +11,7 @@ typedef struct list List;
 
 List* createList();
 
-void fillList(int);
+void fillList(int, List*);
 
 void appendList(Node *, List *);
 

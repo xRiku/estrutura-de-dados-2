@@ -17,7 +17,7 @@ void fillArray(char *array, int arrayLength) {
 void markArray(char *array, int arrayLength) {
   for (int i = 2; i < arrayLength; i += 1) {
     if (((array[i/BYTE] >> i%BYTE) & 1U)) {
-      for (int j = i; j <= arrayLength ; j += i) {
+      for (int j = i; j <= arrayLength; j += i) {
         if (j != i) {
           array[j/BYTE] &= ~(1U << j%BYTE);
           // array[j] = 0;

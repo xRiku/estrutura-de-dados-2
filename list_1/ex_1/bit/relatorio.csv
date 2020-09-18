@@ -1,0 +1,10 @@
+;bit;
+bytes alocados (10000 numeros);;;;
+tempo: 1000 números;0m0,001s;0m0,001s;0m0,000s;
+tempo: 10000 números;0m0,001s;0m0,001s;0m0,001s;
+tempo: 100000 números;0m0,001s;0m0,001s;0m0,001s;
+tempo: 1000000 números;0m0,001s;0m0,001s;0m0,001s;
+tempo: 10000000 números;0m0,001s;0m0,001s;0m0,001s;
+tempo: 100000000 números;0m0,001s;0m0,001s;0m0,001s;
+tempo: 1000000000 números;0m0,001s;0m0,000s;0m0,001s;
+tempo: 10000000000 números;0m0,000s;0m0,001s;0m0,001s;

@@ -12,7 +12,7 @@ int main (int argc, char **argv) {
     char *array = createArray(arrayLength);
     fillArray(array, arrayLength);
     markArray(array, arrayLength);
-    printArray(array, arrayLength);
+    // printArray(array, arrayLength);
     free(array);
   } else {
     printf("This program requires one input number\n");

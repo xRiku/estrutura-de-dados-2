@@ -8,12 +8,15 @@ typedef struct node Node;
 
 typedef struct list List;
 
+void chooseLeader(List *, int);
 
 List* createList();
 
 void fillList(int, List*);
 
 void appendList(Node *, List *);
+
+void pop(Node*, Node*, List *);
 
 void printList(List *list);
 

@@ -6,7 +6,8 @@ int main (int argc, char ** argv) {
     int M = atoi(argv[2]);
     List *l = createList();
     fillList(N, l);
-    // printList(l);
+    chooseLeader(l, M);
+    printList(l);
     freeList(l);
   } else {
     printf("The parameters should be two integer numbers\n");

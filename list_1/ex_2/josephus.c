@@ -12,6 +12,20 @@ struct list {
   int length;
 };
 
+void chooseLeader(List *list, int M) {
+  int counter = 1;
+  Node *q = list->head;
+  for (Node *p = list->head; list->length > 1; p = p->next) {
+    if (counter == 5) {
+      pop(q, p, list);
+      counter = 0;
+    }
+    q = p;
+    counter += 1;
+  }
+  putchar('\n');
+}
+
 
 List* createList() {
   List *l = malloc(sizeof(List));
@@ -40,9 +54,27 @@ void appendList(Node *node, List *list) {
   }
 }
 
+void pop(Node* previous, Node* current, List *list) {
+   previous->next = current->next;
+   if (list->head == current) {
+     list->head = current->next;
+   } 
+
+   if (list->tail == current) {
+     list->tail = previous;
+   }
+
+   printf("%d ", current->number);
+   freeNode(current);
+   current = current->next;
+   list->length -= 1;
+}
+
 void printList(List *list) {
-  for (Node *p = list->head; p != NULL; p = p->next) {
+  Node *p = list->head;
+  for (int i = 0; i < list->length; i += 1) {
     printf("%d ", p->number);
+    p = p->next;
   }
   putchar('\n');
 }

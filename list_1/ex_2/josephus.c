@@ -25,6 +25,7 @@ void fillList(int N, List* list) {
     Node *node = createNode(i+1);
     appendList(node, list);
   }
+  list->tail->next = list->head;
 }
 
 void appendList(Node *node, List *list) {
@@ -47,6 +48,12 @@ void printList(List *list) {
 }
 
 void freeList(List* list) {
+  for (Node *p = list->head; list->head != list->tail;) {
+    list->head = list->head->next;
+    free(p);
+    p = list->head;
+  }
+  free(list->head);
   free(list);
 }
 

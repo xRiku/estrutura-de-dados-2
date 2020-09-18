@@ -16,7 +16,7 @@ void chooseLeader(List *list, int M) {
   int counter = 1;
   Node *q = list->head;
   for (Node *p = list->head; list->length > 1; p = p->next) {
-    if (counter == 5) {
+    if (counter == M) {
       pop(q, p, list);
       counter = 0;
     }

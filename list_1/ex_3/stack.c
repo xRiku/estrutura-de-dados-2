@@ -67,8 +67,8 @@ void freeStack(Stack *stack) {
   Element *p;
   for (int i = 0; i < stack->height; i++) {
     p = stack->head;
-    free(p);
     stack->head = stack->head->next;
+    free(p);
   }
   free(stack);
 }

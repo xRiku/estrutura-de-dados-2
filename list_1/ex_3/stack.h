@@ -12,9 +12,10 @@ Stack* createStack();
 
 Element* createElement(int, void *);
 
+void push(Stack *, Element *);
+
 void printStack(Stack *);
 
-void push(Stack *, Element *);
 
 
 int isOperator(char*);

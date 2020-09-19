@@ -28,8 +28,8 @@ Element* createElement(int type, void *item) {
 }
 
 void push(Stack *stack, Element *element) {
-  double *d = element->item;
-  printf("%lf\n", *d);
+  // double *d = element->item;
+  // printf("%lf\n", *d);
   if (stack->head == NULL) {
     stack->head = element;
     stack->height = 1;
@@ -43,14 +43,13 @@ void push(Stack *stack, Element *element) {
 void printStack(Stack *stack) {
   Element *p = stack->head;
   for (int i = 0; i < stack->height; i++) {
-    double *d = p->item;
-    printf("%.3lf ", *d);
-
-    // if (p->id == 1) {
-    // } else {
-    //   char *c = p->item;
-    //   printf("%c ",  *c);
-    // }
+    if (p->id == 1) {
+      double *d = p->item;
+      printf("%.3lf ", *d);
+    } else {
+      char *c = p->item;
+      printf("%c ",  *c);
+    }
     p = p->next;
   }
   putchar('\n');

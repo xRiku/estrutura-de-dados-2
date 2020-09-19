@@ -40,6 +40,13 @@ void push(Stack *stack, Element *element) {
   }
 }
 
+Element* pop(Stack *stack) {
+  Element *p = stack->head;
+  stack->head = stack->head->next;
+  p->next = NULL;
+  return p;
+}
+
 void printStack(Stack *stack) {
   Element *p = stack->head;
   for (int i = 0; i < stack->height; i++) {
@@ -67,4 +74,30 @@ int isOperator(char *c) {
     default:
       return 0;
   }
+}
+
+double computeValues(Element *operand, Element *operand2, Element* operator) {
+  double *d = operand->item;
+  double *d2 = operand2->item;
+  printf("%lf %lf\n", *d, *d2);
+  char *c = operator->item;
+  double result;
+  switch (*c) {
+    case '+':
+      result = *d + *d2;
+      break;
+    case '-':
+      result = *d - *d2;
+      break;
+    case '*':
+      result = *d * *d2;
+      break;
+    case '/':
+      result = *d / *d2;
+      break;
+    default: 
+      result = *d + *d2;
+  }
+  printf("Resultado: %lf\n", result);
+  return result;
 }

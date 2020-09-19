@@ -1,6 +1,5 @@
 #include "josephus.h"
 
-
 struct node {
   int number;
   struct node *next;
@@ -14,11 +13,20 @@ struct list {
 
 void chooseLeader(List *list, int M) {
   int counter = 1;
-  Node *q = list->head;
+  Node *q, *r;
   for (Node *p = list->head; list->length > 1; p = p->next) {
     if (counter == M) {
-      pop(q, p, list);
-      counter = 0;
+      r = p;
+      p = p->next;
+      if (list->head == r) {
+        list->head = p;
+      } 
+      if (list->tail == r) {
+        list->tail = q;
+      }
+      q->next = p;
+      pop(r, list);
+      counter = 1;
     }
     q = p;
     counter += 1;
@@ -31,6 +39,7 @@ List* createList() {
   List *l = malloc(sizeof(List));
   l->head = NULL;
   l->tail = NULL;
+  l->length = 0;
   return l;
 }
 
@@ -46,7 +55,7 @@ void appendList(Node *node, List *list) {
   if (list->head == NULL) {
     list->head = node;
     list->tail = list->head;
-    list->length += 1;
+    list->length = 1;
   } else {
     list->tail->next = node;
     list->tail = list->tail->next;
@@ -54,20 +63,10 @@ void appendList(Node *node, List *list) {
   }
 }
 
-void pop(Node* previous, Node* current, List *list) {
-   previous->next = current->next;
-   if (list->head == current) {
-     list->head = current->next;
-   } 
-
-   if (list->tail == current) {
-     list->tail = previous;
-   }
-
-   printf("%d ", current->number);
-   freeNode(current);
-   current = current->next;
-   list->length -= 1;
+void pop(Node* n, List *list) {
+  printf("%d ", n->number);
+  freeNode(n);
+  list->length -= 1;
 }
 
 void printList(List *list) {

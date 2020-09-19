@@ -47,14 +47,11 @@ int main(int argc, char  **argv) {
         j += 1;
       }
     }
-    // if (isOperator(argv[i])){
-    //   push(operators, )
-    // } else {
-    //   push(operands, argc[])
-    // }
   }
-
   printStack(operands);
-  printStack(operators);
+  free(doubles);
+  freeStack(operands);
+  freeStack(operators);
+  // printStack(operators);
   
 }

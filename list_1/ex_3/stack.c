@@ -43,6 +43,7 @@ void push(Stack *stack, Element *element) {
 Element* pop(Stack *stack) {
   Element *p = stack->head;
   stack->head = stack->head->next;
+  stack->height -= 1;
   p->next = NULL;
   return p;
 }
@@ -62,6 +63,17 @@ void printStack(Stack *stack) {
   putchar('\n');
 }
 
+void freeStack(Stack *stack) {
+  Element *p;
+  for (int i = 0; i < stack->height; i++) {
+    p = stack->head;
+    free(p);
+    stack->head = stack->head->next;
+  }
+  free(stack);
+}
+
+
 
 
 int isOperator(char *c) {
@@ -79,7 +91,6 @@ int isOperator(char *c) {
 double computeValues(Element *operand, Element *operand2, Element* operator) {
   double *d = operand->item;
   double *d2 = operand2->item;
-  printf("%lf %lf\n", *d, *d2);
   char *c = operator->item;
   double result;
   switch (*c) {
@@ -98,6 +109,5 @@ double computeValues(Element *operand, Element *operand2, Element* operator) {
     default: 
       result = *d + *d2;
   }
-  printf("Resultado: %lf\n", result);
   return result;
 }

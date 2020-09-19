@@ -1,7 +1,7 @@
 all: link clean
 
 link: sieve.o main.o
-	gcc -o ../exec/int.out sieve.o main.o
+	gcc -o int sieve.o main.o
 
 sieve.o: sieve.c sieve.h
 	gcc -c sieve.c

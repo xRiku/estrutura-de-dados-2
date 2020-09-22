@@ -17,4 +17,8 @@ void insertNode(BST*, Node*);
 
 void printTree(BST*);
 
+void freeNode(BST *);
+
+void freeTree(BST *);
+
 #endif

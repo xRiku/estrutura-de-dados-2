@@ -64,3 +64,17 @@ void printTree(BST *root) {
     printTree(&(*root)->right);
   }
 }
+
+void freeNode(BST *root) {
+  if ((*root)->left != NULL) {
+    freeNode(&(*root)->left);
+  }
+  if ((*root)->right != NULL) {
+    freeNode(&(*root)->right);
+  }
+  free(*root);
+}
+void freeTree(BST *root) {
+  freeNode(root);
+  free(root);
+}

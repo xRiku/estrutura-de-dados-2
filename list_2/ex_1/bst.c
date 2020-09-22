@@ -26,7 +26,7 @@ void insertNode(BST *root, Node *node) {
     *root = node; 
     return;
   }
-  while (p->left != NULL p->right != NULL) {
+  while (p->left != NULL || p->right != NULL) {
     if (node->key < p->key) {
       if (p->left == NULL) {
         break;
@@ -56,5 +56,11 @@ void insertNode(BST *root, Node *node) {
 }
 
 void printTree(BST *root) {
+  if ((*root)->left != NULL) {
+    printTree(&(*root)->left);
+  }
   printf("%d\n", (*root)->key);
+  if ((*root)->right != NULL) {
+    printTree(&(*root)->right);
+  }
 }

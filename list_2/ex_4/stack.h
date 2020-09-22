@@ -14,6 +14,10 @@ void push(Stack *stack, void *item);
 
 Item* pop(Stack *stack);
 
+void deleteStack(Stack *stack);
+
+void printStack(Stack *stack, int type);
+
 int stackHeight(Stack *stack);
 
 

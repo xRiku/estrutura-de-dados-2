@@ -11,5 +11,10 @@ typedef Node* BST;
 
 BST* createTree();
 
+Node* createNode(int);
+
+void insertNode(BST*, Node*);
+
+void printTree(BST*);
 
 #endif

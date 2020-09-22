@@ -9,3 +9,6 @@ bst.o: bst.c bst.h
 
 main.o: main.c bst.h
 	gcc -c main.c
+
+clean:
+	rm *.o

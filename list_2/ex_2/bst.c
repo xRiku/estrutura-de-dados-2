@@ -75,7 +75,26 @@ void freeNode(BST *root) {
   }
   free(*root);
 }
+
 void freeTree(BST *root) {
   freeNode(root);
   free(root);
+}
+
+int treeHeight(BST *root) {
+  if (*root == NULL) {
+    return -1;
+  } else {
+    if ((*root)->left == NULL && (*root)->right == NULL) {
+      return 0;
+    } else {
+      int rightHeight = treeHeight(&(*root)->right);
+      int leftHeight = treeHeight(&(*root)->left);
+      if (rightHeight > leftHeight) {
+        return (rightHeight + 1);
+      } else {
+        return (leftHeight + 1);
+      }
+    }
+  }
 }

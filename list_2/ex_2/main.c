@@ -7,12 +7,23 @@ int main(int argc, char **argv) {
   if (argc > 1) {
     int keys = atoi(argv[1]);
     BST* root = createTree();
-    srand(time(NULL));
-    for (int i = 0; i < keys; i += 1) {
-      int r = rand();
-      insertNode(root, createNode(r));
-    }
-    printTree(root);
+  Node* node = createNode(2);
+  Node* node2 = createNode(3);
+  Node* node3 = createNode(1);
+    Node* node4 = createNode(4);
+  Node* node5 = createNode(7);
+  insertNode(root, node);
+  insertNode(root, node2);
+  insertNode(root, node3);
+  insertNode(root, node4);
+  insertNode(root, node5);
+    // srand(time(NULL));
+    // for (int i = 0; i < keys; i += 1) {
+      // int r = rand();
+      // insertNode(root, createNode(r));
+    // }
+    // printTree(root);
+    printf("Height: %d\n", treeHeight(root));
     freeTree(root);
   }
 }

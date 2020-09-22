@@ -21,4 +21,6 @@ void freeNode(BST *);
 
 void freeTree(BST *);
 
+int treeHeight(BST *);
+
 #endif

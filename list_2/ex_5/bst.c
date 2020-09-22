@@ -71,6 +71,7 @@ void rec_preorder(BST *root, void (*visit)(BST*)) {
     Item *item = pop(stack);
     p = getElement(item);
     (*visit)(&p);
+    free(item);
 
     if ((p)->right != NULL) {
       push(stack, (p)->right);
@@ -101,7 +102,27 @@ void rec_inorder(BST *root, void (*visit)(BST*)) {
 
 
 void rec_postorder(BST *root, void (*visit)(BST*)) {
-  
+  Node* p = *root;
+  Stack* stack = createStack();
+  Node *lastNodeVisited = NULL;
+  // *p = NULL;
+  while (stackHeight(stack) > 0 || p != NULL) {
+    if (p != NULL) {
+      push(stack, p);
+      p = p->left;
+    } else {
+      Item *peeked = peek(stack);
+      Node *peekNode = getElement(peeked);
+      if (peekNode->right != NULL && lastNodeVisited != peekNode->right) {
+        p = peekNode->right;
+      } else {
+        (*visit)(&peekNode);
+        Item *item = pop(stack);
+        lastNodeVisited = getElement(item);
+      }
+    }
+  }
+  deleteStack(stack);
 }
 
 void freeNode(BST *root) {

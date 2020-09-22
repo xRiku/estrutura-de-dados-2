@@ -14,11 +14,14 @@ void push(Stack *stack, void *item);
 
 Item* pop(Stack *stack);
 
+Item* peek(Stack *stack);
+
 void deleteStack(Stack *stack);
 
 void printStack(Stack *stack, int type);
 
 void* getElement(Item* item);
+
 
 int stackHeight(Stack *stack);
 

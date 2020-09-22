@@ -56,13 +56,23 @@ void insertNode(BST *root, Node *node) {
 
 }
 
-void printTree(BST *root) {
+void preOrderTreePrint(BST *root) {
+  printf("%d\n", (*root)->key);
   if ((*root)->left != NULL) {
-    printTree(&(*root)->left);
+    preOrderTreePrint(&(*root)->left);
+  }
+  if ((*root)->right != NULL) {
+    preOrderTreePrint(&(*root)->right);
+  }
+}
+
+void inOrderTreePrint(BST *root) {
+  if ((*root)->left != NULL) {
+    inOrderTreePrint(&(*root)->left);
   }
   printf("%d\n", (*root)->key);
   if ((*root)->right != NULL) {
-    printTree(&(*root)->right);
+    inOrderTreePrint(&(*root)->right);
   }
 }
 

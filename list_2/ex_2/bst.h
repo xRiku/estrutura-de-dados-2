@@ -15,7 +15,9 @@ Node* createNode(int);
 
 void insertNode(BST*, Node*);
 
-void printTree(BST*);
+void preOrderTreePrint(BST*);
+
+void inOrderTreePrint(BST*);
 
 void freeNode(BST *);
 

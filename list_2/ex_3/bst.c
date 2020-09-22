@@ -60,26 +60,6 @@ void printRoot(BST *root) {
   printf("%d\n", (*root)->key);
 }
 
-void inOrderTreePrint(BST *root) {
-  if ((*root)->left != NULL) {
-    inOrderTreePrint(&(*root)->left);
-  }
-  printf("%d\n", (*root)->key);
-  if ((*root)->right != NULL) {
-    inOrderTreePrint(&(*root)->right);
-  }
-}
-
-void postOrderTreePrint(BST *root) {
-  if ((*root)->left != NULL) {
-    inOrderTreePrint(&(*root)->left);
-  }
-  if ((*root)->right != NULL) {
-    inOrderTreePrint(&(*root)->right);
-  }
-  printf("%d\n", (*root)->key);
-}
-
 void rec_preorder(BST *root, void (*visit)(BST*)) {
   (*visit)(root);
   // preOrderTreePrint(root);

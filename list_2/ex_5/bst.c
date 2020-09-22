@@ -94,6 +94,7 @@ void rec_inorder(BST *root, void (*visit)(BST*)) {
       Item *item = pop(stack);
       p = getElement(item);
       (*visit)(&p);
+      free(item);
       p = (p)->right;
     }
   }
@@ -119,6 +120,7 @@ void rec_postorder(BST *root, void (*visit)(BST*)) {
         (*visit)(&peekNode);
         Item *item = pop(stack);
         lastNodeVisited = getElement(item);
+        free(item);
       }
     }
   }

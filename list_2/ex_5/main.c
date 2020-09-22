@@ -13,10 +13,10 @@ int main() {
   insertNode(root, node4);
   insertNode(root, node5);
   void (*preOrder)() = &printRoot;
-  // rec_preorder(root, printRoot);
+  rec_preorder(root, printRoot);
   putchar('\n');
   rec_inorder(root, printRoot);
   putchar('\n');
-  // rec_postorder(root, printRoot);
+  rec_postorder(root, printRoot);
   freeTree(root);
 }

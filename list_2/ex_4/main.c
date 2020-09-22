@@ -8,5 +8,6 @@ int main() {
   p[1] = 3;
   push(stack, &p[0]);
   push(stack, &p[1]);
+  pop(stack);
   printf("%d\n", stackHeight(stack));
 }

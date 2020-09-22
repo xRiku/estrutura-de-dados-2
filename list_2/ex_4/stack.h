@@ -12,6 +12,8 @@ Stack* createStack();
 
 void push(Stack *stack, void *item);
 
+Item* pop(Stack *stack);
+
 int stackHeight(Stack *stack);
 
 

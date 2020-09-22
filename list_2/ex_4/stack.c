@@ -11,7 +11,6 @@ struct stack {
   int height;
 };
 
-
 Stack* createStack() {
   Stack *stack = malloc(sizeof(Stack));
   stack->head = NULL;
@@ -32,6 +31,15 @@ void push(Stack *stack, void *element) {
     item->next = stack->head;
     stack->head = item;
     stack->height += 1;
+  }
+}
+
+Item* pop(Stack *stack) {
+  if (stack->head != NULL) {
+    Item *item = stack->head;
+    stack->head = stack->head->next;
+    stack->height -= 1;
+    return item;
   }
 }
 

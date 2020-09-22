@@ -6,5 +6,7 @@ typedef struct node Node;
 
 typedef Node* BST;
 
+BST *createTree();
+
 
 #endif

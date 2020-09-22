@@ -8,5 +8,11 @@ typedef struct stack Stack;
 
 typedef struct item Item;
 
+Stack* createStack();
+
+void push(Stack *stack, void *item);
+
+int stackHeight(Stack *stack);
+
 
 #endif

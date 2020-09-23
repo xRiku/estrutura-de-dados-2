@@ -17,6 +17,8 @@ Item* dequeue(Queue *);
 
 void deleteQueue(Queue *);
 
+void printQueue(Queue *, int type);
+
 int queueLength(Queue *);
 
 

@@ -2,13 +2,22 @@
 
 int main() {
   Queue *queue = createQueue();
-  int x = 1, y = 2;
+  int x = 4;
+  int x2 = 2;
+  int x3 = 3;
+  int x4 = 1;
+  int x5 = 7;
   enqueue(queue, &x);
-  enqueue(queue, &y);
+  enqueue(queue, &x2);
+  enqueue(queue, &x3);
+  enqueue(queue, &x4);
+  enqueue(queue, &x5);
 
-  free(dequeue(queue));
+  // free(dequeue(queue));
 
   printf("%d \n", queueLength(queue));
+
+  printQueue(queue, 1);
 
   deleteQueue(queue);
   // dequeue(queue);

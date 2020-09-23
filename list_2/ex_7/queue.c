@@ -52,9 +52,22 @@ void deleteQueue(Queue *queue) {
   for (int i = 0; i < queue->length; i++) {
     queue->head = queue->head->next;
     free(p);
+    p = queue->head;
   }
   free(queue);
 }
+
+void printQueue(Queue *queue, int type) {
+  Item *p = queue->head;
+  if (type == 1) {
+    for (int i = 0; i < queue->length; i++) {
+      int *value = p->element;
+      printf("%d ", *value);
+      p = p->next;
+    }
+    putchar('\n');
+  }
+} 
 
 int queueLength(Queue *queue) {
   return queue->length;

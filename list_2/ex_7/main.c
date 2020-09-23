@@ -6,7 +6,11 @@ int main() {
   enqueue(queue, &x);
   enqueue(queue, &y);
 
-  printf("%d \n", length(queue));
+  free(dequeue(queue));
+
+  printf("%d \n", queueLength(queue));
+
+  deleteQueue(queue);
   // dequeue(queue);
   // BST* root = createTree();
   // Node* node = createNode(4);

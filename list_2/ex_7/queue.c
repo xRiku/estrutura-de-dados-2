@@ -20,22 +20,42 @@ Queue *createQueue() {
 }
 
 void enqueue(Queue *queue, void *element) {
-  if (queue->head = NULL) {
+  if (queue->head == NULL) {
     Item *item = malloc(sizeof(Item));
     item->next = NULL;
     item->element = element;
     queue->head = item;
     queue->tail = queue->head;
-    queue->length = 1;
+    queue->length += 1;
   } else {
     Item *item = malloc(sizeof(Item));
-    item->next = queue->head;
-    queue->head = item;
+    item->next = NULL;
+    item->element = element;
+    queue->tail->next = item;
+    queue->tail = item;
     queue->length += 1;
   }
 }
 
+Item* dequeue(Queue *queue) {
+  if (queue->head != NULL) {
+    Item *item = queue->head;
+    queue->head = queue->head->next;
+    queue->length -= 1;
+    item->next = NULL;
+    return item;
+  }
+}
 
-int length(Queue *queue) {
+void deleteQueue(Queue *queue) {
+  Item *p = queue->head;
+  for (int i = 0; i < queue->length; i++) {
+    queue->head = queue->head->next;
+    free(p);
+  }
+  free(queue);
+}
+
+int queueLength(Queue *queue) {
   return queue->length;
 }

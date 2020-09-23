@@ -13,7 +13,11 @@ Queue *createQueue();
 
 void enqueue(Queue *, void *);
 
-int length(Queue *);
+Item* dequeue(Queue *);
+
+void deleteQueue(Queue *);
+
+int queueLength(Queue *);
 
 
 #endif

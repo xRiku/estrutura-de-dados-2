@@ -22,7 +22,6 @@ void printStack(Stack *stack, int type);
 
 void* getElement(Item* item);
 
-
 int stackHeight(Stack *stack);
 
 

@@ -43,6 +43,11 @@ Item* pop(Stack *stack) {
   }
 }
 
+Item* peek(Stack *stack) {
+  Item *item = stack->head;
+  return item;
+}
+
 void deleteStack(Stack *stack) {
   Item *p = stack->head;
   for (int i = 0; i < stack->height; i++) {
@@ -63,6 +68,10 @@ void printStack(Stack *stack, int type) {
     }
     putchar('\n');
   }
+}
+
+void* getElement(Item* item) {
+  return item->element;
 }
 
 int stackHeight(Stack *stack) {

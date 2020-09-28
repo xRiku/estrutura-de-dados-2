@@ -1,3 +1,9 @@
+sha: shaker.o main.o
+	gcc -o sha shaker.o main.o
+
+shaker.o: shaker.c item.h
+	gcc -c shaker.c
+
 bub: bubble.o main.o
 	gcc -o bub bubble.o main.o
 

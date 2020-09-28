@@ -1,8 +1,15 @@
+bub: bubble.o main.o
+	gcc -o bub bubble.o main.o
+
+bubble.o: bubble.c item.h
+	gcc -c bubble.c
+
 ins: insertion.o main.o
 	gcc -o ins insertion.o main.o
 
 insertion.o: insertion.c item.h
 	gcc -c insertion.c
+
 
 sel: selection.o main.o
 	gcc -o sel selection.o main.o

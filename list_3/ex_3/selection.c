@@ -6,7 +6,7 @@ void sort(Item *a, int lo, int hi) {
   for (int i = 0; i < hi; i++) {
     k = i;
     for (int j = i + 1; j < hi; j++) {
-      compexch(a[j], a[k]);
+      compexch(a[k], a[j]);
     }
   }
 }

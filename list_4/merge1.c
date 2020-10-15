@@ -1,7 +1,8 @@
 #include "item.h"
+#include <stdlib.h>
 
 void merge(Item *a, Item *aux, int lo, int mid, int hi) {
-  for (int k = lo; k < hi; k += 1) {
+  for (int k = lo; k <= hi; k += 1) {
     aux[k] = a[k];
   }
   int i = lo, j = mid + 1;

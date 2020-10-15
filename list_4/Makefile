@@ -1,8 +1,8 @@
-merge2: merge2.o main.o;
-	gcc -o merge2 merge2.o main.o
+merge4: merge4.o main.o;
+	gcc -o merge4 merge4.o main.o
 
-merge2.o: merge2.c item.h;
-	gcc -c merge2.c
+merge4.o: merge4.c item.h;
+	gcc -c merge4.c
 
 merge1: merge1.o main.o;
 	gcc -o merge1 merge1.o main.o

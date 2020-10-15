@@ -1,6 +1,8 @@
 #ifndef _ITEM_
 #define _ITEM_
 
+#define CUTOFF 10
+
 typedef int Item;
 #define key(A) (A)
 #define less(A, B) (key(A) < key(B))

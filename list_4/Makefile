@@ -1,3 +1,9 @@
+merge8: merge8.o main.o;
+	gcc -o merge8 merge8.o main.o
+
+merge8.o: merge8.c item.h;
+	gcc -c merge8.c
+
 merge4: merge4.o main.o;
 	gcc -o merge4 merge4.o main.o
 
